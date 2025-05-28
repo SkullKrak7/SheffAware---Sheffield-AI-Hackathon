@@ -1,5 +1,9 @@
 # SheffAware: Sheffield AI Hackathon Project
 
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sheffaware.streamlit.app)
+
+🌐 Access the live app: [sheffaware.streamlit.app](https://sheffaware.streamlit.app)
+
 ## Overview
 
 SheffAware addresses how public infrastructure and environmental services are spatially distributed across Sheffield, aiming to identify inequities and clusters using unsupervised learning techniques.
@@ -18,6 +22,7 @@ While grid-level granularity was initially explored, ward-level clustering was u
 SheffAware/
 ├── app.py
 ├── requirements.txt
+├── Dockerfile
 ├── Sheffield_Wards.geojson
 ├── README.md
 │
@@ -94,6 +99,18 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+### 3. Run with Docker (Optional)
+
+```bash
+# Build the Docker image
+docker build -t sheffaware .
+
+# Run the container
+docker run -p 8501:8501 sheffaware
+```
+
+Then open your browser to: [http://localhost:8501](http://localhost:8501)
+
 You can optionally deploy the dashboard to [Streamlit Cloud](https://streamlit.io/cloud) by pushing this repo to GitHub and linking your account.
 
 ---
@@ -105,6 +122,7 @@ You can optionally deploy the dashboard to [Streamlit Cloud](https://streamlit.i
 - Clustering: Hierarchical (Ward’s method)
 - Mapping: GeoJSON + Plotly Choropleth
 - Data Preprocessing: GeoPandas spatial joins and aggregation
+- Deployment: Docker containerization
 
 ---
 
